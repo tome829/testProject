@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean name="konanPropertiesService" class="egovframework.rte.fdl.property.impl.EgovPropertyServiceImpl" destroy-method="destroy">
+		<property name="properties">
+	        <map>
+	        	<entry key="url" value="http://10.10.20.237:9577/search5"/>
+	        	<entry key="charset" value="UTF-8" />
+	        	<entry key="site" value="KONAN" /> <!-- 사이트명 -->
+	        	
+				<entry key="ksfUrl" value="http://10.10.20.237:9614/ksf/api/" />
+				<entry key="ksfDomain" value="0" />
+				<entry key="ksfMaxResult" value="10" />
+				
+				<!-- 운영(true)/개발(false) 라이선스 구분-->
+				<entry key="realLic" value="false" />
+				
+				<entry key="pageSize" value="10" />
+				<entry key="pageSizeTotal" value="5" />
+				
+		
+				<entry key="top_newsField" value="created_time,updated_date,title,message,file_id,file_url,cn_lang,chain,document" />
+				<entry key="top_newsFrom" value="top_news.top_news" />
+				<entry key="top_newsHilight" value="{'title':{'length':50,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}},{'document':{'length':200,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}}"/>
+				
+				<entry key="book_infoField" value="category,bk_nm,bk_writer,content,file_nm,flpth,since,detail_txt" />
+				<entry key="book_infoFrom" value="book_info.book_info" />
+				<entry key="book_infoHilight" value="{'bk_nm':{'length':50,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}},{'bk_writer':{'length':50,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}},{'content':{'length':200,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}}"/>
+								
+				<!-- 
+				<entry key="boardField" value="doc_seq,title,content,regdate,year,writer,fullpath,thumbnail" />
+				<entry key="boardFrom" value="board.board" />
+				<entry key="boardHilight" value="{'title':{'length':50,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}},{'content':{'length':200,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}}"/>
+				
+				
+				<entry key="personField" value="prs_seq,prs_nm_ko,prs_nm_en,head_nm,dept_nm,role_nm,tree_data,picture,phone_no,mobile_no,email" />
+				<entry key="personFrom" value="person.person" />
+				<entry key="personHilight" value="{'prs_nm_ko':{'length':50,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}},{'prs_nm_en':{'length':200,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}},{'dept_nm':{'length':200,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}},{'phone_no':{'length':200,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}},{'mobile_no':{'length':200,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}},{'role_nm':{'length':200,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}}"/>
+				
+				<entry key="newsField" value="idx,media_type,media_sub_type,user_id,post_id,parent_post_id,post_url,created_time,created_day,likes,category,title,message,cleaned_messag"/>
+				<entry key="newsFrom" value="news_tb.news_tb" />
+				<entry key="newsHilight" value="{'user_id':{'length':50,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}},{'title':{'length':50,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}},{'message':{'length':50,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}},{'cleaned_messag':{'length':50,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}}"/>
+				 -->
+				<!-- 검색대상 : board -->	<!-- BoardServiceImple.java에 명시 되어있지만, EgovPropertyService가 존재하지 않음. -->
+				<!-- <entry key="boardField" value="KOR_TSK_CHRG_NM,KOR_RPT_NM,DOCUMENT,MODIFY_DATE,ORIGN_CTRL_NO,FILENAME" /> --><!-- 필드명 -->				
+				<!-- <entry key="boardFrom" value="rpt.rpt" /> --> <!-- 볼륨.테이블 -->
+				<!-- <entry key="boardHilight" value="{'KOR_RPT_NM':{'length':50,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}},{'DOCUMENT':{'length':200,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;','complex':'MULTIPOINT','delim':'##@@##'}},{'FILENAME':{'length':200,'begin':'&lt;mark&gt;','end':'&lt;/mark&gt;'}}"/>
+				 -->		
+	        </map>
+		</property>		
+	</bean>
+						
+</beans>	
